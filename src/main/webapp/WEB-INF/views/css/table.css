@@ -1,0 +1,30 @@
+table {
+    border-collapse: collapse;
+    margin: auto;
+    color: aqua;
+    width: 40%;
+}
+
+th, td {
+    background-color: aqua;
+    color: black;
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #4CAF50;
+    font-weight: bold;
+}
+
+tr:nth-child {
+    background-color: #fafafa;
+}
+body{
+ background-image: url("https://phonoteka.org/uploads/posts/2021-06/1624480999_51-phonoteka_org-p-programmirovanie-oboi-krasivo-57.jpg");
+}
+.button{
+    width:200px;
+    height: 60px;
+}
