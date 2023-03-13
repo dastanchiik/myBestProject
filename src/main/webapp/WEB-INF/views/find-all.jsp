@@ -13,7 +13,7 @@
     <style><%@include file="/WEB-INF/views/css/table.css"%></style>
 
 </head>
-
+<body>
 <table border="1px" style="color: green">
     <thead>
     <tr>
@@ -46,9 +46,9 @@
     </c:forEach>
     </tbody>
 </table>
-<div style="float: left;transform: translate(70em,-2em)" class="button">
-<button><a href="/companyForm">create new company</a></button><br>
-<button><a href="/clear">delete all</a></button>
+<div class="button">
+<button><a href="/companyForm" class="company">create new company</a></button><br>
+<button><a href="/clear" class="all">delete all</a></button>
 </div>
 </body>
 </html>

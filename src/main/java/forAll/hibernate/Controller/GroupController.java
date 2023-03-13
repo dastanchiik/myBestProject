@@ -1,5 +1,7 @@
 package forAll.hibernate.Controller;
 
+import forAll.dao.repository.CompanyDao;
+import forAll.dao.repository.CourseDao;
 import forAll.dao.repository.GroupDao;
 import forAll.hibernate.Controller.models.Groups;
 import org.springframework.stereotype.Controller;
@@ -9,9 +11,13 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class GroupController {
     private final GroupDao groupDao;
+    private final CompanyDao companyDao;
+    private final CourseDao courseDao;
 
-    public GroupController(GroupDao groupDao) {
+    public GroupController(GroupDao groupDao, CompanyDao companyDao, CourseDao courseDao) {
         this.groupDao = groupDao;
+        this.companyDao = companyDao;
+        this.courseDao = courseDao;
     }
 
     @GetMapping("/groups")
@@ -21,7 +27,7 @@ public class GroupController {
     }
 
     @PostMapping("/saveGroups")
-    private String saveStudent(@RequestParam("name") String name,@RequestParam("start") String start,@RequestParam("finish") String finish) {
+    private String saveStudent(@RequestParam("name") String name, @RequestParam("start") String start, @RequestParam("finish") String finish) {
         Groups group = new Groups();
         group.setGroupName(name);
         group.setDateOfStart(start);
@@ -31,7 +37,9 @@ public class GroupController {
     }
 
     @GetMapping("/groupForm")
-    public String saveCompanyPage() {
+    public String saveCompanyPage(Model model) {
+        model.addAttribute("companyConnection",companyDao.getALl());
+        model.addAttribute("courseConnection",courseDao.getALl());
         return "group-save";
     }
 
@@ -66,7 +74,7 @@ public class GroupController {
         group.setGroupName(name);
         group.setDateOfStart(start);
         group.setDateOfFinish(finish);
-        groupDao.updateById(id,group);
+        groupDao.updateById(id, group);
         return "redirect:/groups";
     }
 

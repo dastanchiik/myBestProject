@@ -1,30 +1,72 @@
-table {
-    border-collapse: collapse;
-    margin: auto;
-    color: aqua;
-    width: 40%;
-}
+/* Table styles */
 
-th, td {
-    background-color: aqua;
-    color: black;
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+table {
+    border: 1px solid green;
+    border-collapse: collapse;
+    width: 100%;
 }
 
 th {
-    background-color: #4CAF50;
-    font-weight: bold;
+    background-color: green;
+    color: white;
+    padding: 8px;
+    text-align: left;
 }
 
-tr:nth-child {
-    background-color: #fafafa;
+td {
+    color: white;
+    background-color: grey;
+    border: 1px solid green;
+    padding: 8px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Button styles */
+
+button {
+    background-color: white;
+    border: none;
+    color: green;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #f2f2f2;
+    color: green;
+}
+
+/* Container styles */
+
+.container {
+    float: left;
+    margin-top: 20px;
+    transform: translate(70em,-2em);
+}
+
+.container button {
+    margin-right: 10px;
+}
+
+.company {
+    color: green;
+    text-decoration: none;
+}
+
+.all {
+    color: red;
+    text-decoration: none;
 }
 body{
- background-image: url("https://phonoteka.org/uploads/posts/2021-06/1624480999_51-phonoteka_org-p-programmirovanie-oboi-krasivo-57.jpg");
-}
-.button{
-    width:200px;
-    height: 60px;
+    background-image: url("https://catherineasquithgallery.com/uploads/posts/2021-02/1614409383_56-p-fon-rabochego-stola-razmitii-temnii-63.jpg");
 }

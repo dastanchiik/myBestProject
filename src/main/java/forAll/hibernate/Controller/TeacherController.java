@@ -1,5 +1,6 @@
 package forAll.hibernate.Controller;
 
+import forAll.dao.repository.CourseDao;
 import forAll.dao.repository.TeacherDao;
 import forAll.hibernate.Controller.models.Teacher;
 import org.springframework.stereotype.Controller;
@@ -9,9 +10,11 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class TeacherController {
     private final TeacherDao companyDao;
+    private final CourseDao courseDao;
 
-    public TeacherController(TeacherDao companyDao) {
+    public TeacherController(TeacherDao companyDao, CourseDao courseDao) {
         this.companyDao = companyDao;
+        this.courseDao = courseDao;
     }
 
     @GetMapping("/teachers")
@@ -31,7 +34,8 @@ public class TeacherController {
     }
 
     @GetMapping("/teacherForm")
-    public String saveCompanyPage() {
+    public String saveCompanyPage(Model model) {
+        model.addAttribute("courseConnectionWithTeacher");
         return "teacher-save";
     }
 

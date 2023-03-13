@@ -11,11 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class CourseController {
-    //    private final CourseDao courseDao;
-//
-//    public CourseController(CourseDao courseDao) {
-//        this.courseDao = courseDao;
-//    }
     private final CourseDao courseDao;
     private final CompanyDao companyDao;
 
@@ -32,7 +27,7 @@ public class CourseController {
     }
 
     @PostMapping("/saveCourse")
-    private String saveStudent(@RequestParam("name") String name, @RequestParam("duration") String duration,@RequestParam("id") Long id) {
+    private String saveStudent(@RequestParam("name") String name, @RequestParam("duration") String duration, @RequestParam("id") Long id) {
         Company company = companyDao.getById(id);
         Course course = new Course();
         course.setCourseName(name);
@@ -43,7 +38,7 @@ public class CourseController {
 
     @GetMapping("/courseForm")
     public String saveCompanyPage(Model model) {
-        model.addAttribute("connection",companyDao.getALl());
+        model.addAttribute("connection", companyDao.getALl());
         return "course-save";
 
     }

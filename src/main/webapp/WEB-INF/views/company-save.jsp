@@ -16,11 +16,11 @@
 <body>
 <h1 style="text-align: center">Save company</h1>
 <form action="/saveCompany" method="post">
-    <label for="companyName">Company name</label>
-    <input class="form-control" name="name" id="companyName" aria-describedby="companyName"
+    <label >Company name:</label>
+    <input class="form-control" name="name"
            placeholder="Enter company name">
     <label for="locatedCountry">Country:</label>
-    <input type="text" class="form-control" name="located" id="locatedCountry" placeholder="Enter located country">
+    <input type="text" class="form-control1" name="located" id="locatedCountry" placeholder="Enter located country">
     <input type="submit" value="save">
 </form>
 </body>

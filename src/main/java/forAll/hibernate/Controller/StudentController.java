@@ -1,5 +1,6 @@
 package forAll.hibernate.Controller;
 
+import forAll.dao.repository.GroupDao;
 import forAll.dao.repository.StudentDao;
 import forAll.hibernate.Controller.models.Student;
 import forAll.hibernate.Controller.models.StudyFormat;
@@ -10,9 +11,11 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class StudentController {
     private final StudentDao companyDao;
+    private final GroupDao groupDao;
 
-    public StudentController(StudentDao companyDao) {
+    public StudentController(StudentDao companyDao, GroupDao groupDao) {
         this.companyDao = companyDao;
+        this.groupDao = groupDao;
     }
 
     @GetMapping("/students")
@@ -33,7 +36,8 @@ public class StudentController {
     }
 
     @GetMapping("/studentForm")
-    public String saveCompanyPage() {
+    public String saveCompanyPage(Model model) {
+        model.addAttribute("groupConnection",groupDao.getALl());
         return "student-save";
     }
 

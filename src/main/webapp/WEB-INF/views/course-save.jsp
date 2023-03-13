@@ -10,15 +10,10 @@
 <html>
 <head>
     <title>Title</title>
-    <style><%@include file="/WEB-INF/views/css/form.css"%>
-    body{
-        background-image: url("https://image1.slideserve.com/1630119/save-energy-l.jpg");
-    }
-    </style>
+    <style><%@include file="/WEB-INF/views/css/form.css"%></style>
 </head>
 <body>
 <h1 style="text-align: center">Save COURSE</h1>
-<h1>Add Course</h1>
 <form action="/saveCourse" method="post">
     <div class="form-group">
         <label for="courseName">Course name</label>
