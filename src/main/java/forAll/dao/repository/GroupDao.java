@@ -1,18 +1,18 @@
 package forAll.dao.repository;
 
-import forAll.hibernate.Controller.models.Group;
+import forAll.hibernate.Controller.models.Groups;
 
 import java.util.List;
 
 public interface GroupDao {
-    void save(Group group);
+    void save(Groups group);
     void deleteAll();
 
-    Group getById(Long id);
+    Groups getById(Long id);
 
     List getALl();
 
     void deleteById(Long id);
 
-    void updateById(Long id, Group group);
+    void updateById(Long id, Groups group);
 }

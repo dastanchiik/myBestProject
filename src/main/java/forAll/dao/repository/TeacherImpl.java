@@ -33,12 +33,8 @@ public class TeacherImpl implements TeacherDao{
     }
     @Override
     public void deleteById(Long id){
-        try (Session session = connection.openSession()){
-            session.beginTransaction();
-            Teacher teacher = getById(id);
-            session.delete(teacher);
-            session.getTransaction().commit();
-        }
+        Session session = connection.getCurrentSession();
+        session.createQuery( "delete from Teacher where id=:Id4" ).setParameter( "Id4", id ).executeUpdate();
     }
 
     @Override

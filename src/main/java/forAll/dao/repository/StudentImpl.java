@@ -32,12 +32,8 @@ public class StudentImpl implements StudentDao{
     }
     @Override
     public void deleteById(Long id){
-        try (Session session = connection.openSession()){
-            session.beginTransaction();
-            Student student = getById(id);
-            session.delete(student);
-            session.getTransaction().commit();
-        }
+        Session session = connection.getCurrentSession();
+        session.createQuery( "delete from Student where id=:Id3" ).setParameter( "Id3", id ).executeUpdate();
     }
 
     @Override

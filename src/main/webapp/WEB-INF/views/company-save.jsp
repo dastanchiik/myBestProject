@@ -9,12 +9,7 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style><%@include file="/WEB-INF/views/css/form.css"%>
-    body{
-        background-image: url("https://community.atlassian.com/t5/image/serverpage/image-id/29794i31C751E7412E80D9?v=v2");
-    }
     </style>
 
 </head>

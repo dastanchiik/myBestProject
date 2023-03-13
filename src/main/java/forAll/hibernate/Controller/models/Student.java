@@ -27,8 +27,8 @@ public class Student {
     private StudyFormat studyFormat;
     @ManyToOne
     @JoinColumn(name = "group_id")
-    private Group group;
-    public Student(String firstName, String lastName, String email, StudyFormat studyFormat, Group group) {
+    private Groups group;
+    public Student(String firstName, String lastName, String email, StudyFormat studyFormat, Groups group) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

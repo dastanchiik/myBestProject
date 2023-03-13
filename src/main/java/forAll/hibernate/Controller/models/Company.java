@@ -29,10 +29,10 @@ public class Company {
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL
             , fetch = FetchType.EAGER
     )
-    private List<Group> groups;
+    private List<Groups> groups;
 
 
-    public Company(String companyName, String locatedCountry, List<Course> courses, List<Group> groups) {
+    public Company(String companyName, String locatedCountry, List<Course> courses, List<Groups> groups) {
         this.companyName = companyName;
         this.locatedCountry = locatedCountry;
         this.courses = courses;

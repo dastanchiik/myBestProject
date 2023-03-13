@@ -13,7 +13,7 @@ import java.util.List;
 @ToString
 @Entity
 @Table(name = "groups")
-public class Group {
+public class Groups {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +32,7 @@ public class Group {
     private List<Student> students;
     @ManyToMany(mappedBy = "groups")
     private List<Course> courses;
-    public Group(String groupName, String dateOfStart, String dateOfFinish, Company company, List<Student> students, List<Course> courses) {
+    public Groups(String groupName, String dateOfStart, String dateOfFinish, Company company, List<Student> students, List<Course> courses) {
         this.groupName = groupName;
         this.dateOfStart = dateOfStart;
         this.dateOfFinish = dateOfFinish;

@@ -33,8 +33,8 @@ public class Course {
             joinColumns =  @JoinColumn(name = "course_id") ,
             inverseJoinColumns =  @JoinColumn(name = "group_id")
     )
-    private List<Group> groups;
-    public Course(String courseName, String duration, Company company, Teacher teacher, List<Group> groups) {
+    private List<Groups> groups;
+    public Course(String courseName, String duration, Company company, Teacher teacher, List<Groups> groups) {
         this.courseName = courseName;
         this.duration = duration;
         this.company = company;
