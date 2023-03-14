@@ -1,7 +1,9 @@
 package forAll.hibernate.Controller;
 
 import forAll.dao.repository.CompanyDao;
+import forAll.dao.repository.CourseDao;
 import forAll.hibernate.Controller.models.Company;
+import forAll.hibernate.Controller.models.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,11 +11,14 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class CompanyController {
     private final CompanyDao companyRepository;
-
     @Autowired
-    public CompanyController(CompanyDao companyRepository) {
+    private final CourseDao courseDao;
+
+    public CompanyController(CompanyDao companyRepository, CourseDao courseDao) {
         this.companyRepository = companyRepository;
+        this.courseDao = courseDao;
     }
+
     @GetMapping("/companies")
     public String findAll(Model model){
         model.addAttribute( "all",companyRepository.getALl() );
@@ -22,6 +27,7 @@ public class CompanyController {
     @GetMapping("/find/{id}")
     public String relation(Model model,@PathVariable Long id){
         model.addAttribute("com",companyRepository.relationship(id));
+        model.addAttribute("example",courseDao.connectionFindAll(id,courseDao.getById(id)));
         return "kol";
     }
 

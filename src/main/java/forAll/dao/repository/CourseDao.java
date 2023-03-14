@@ -1,6 +1,7 @@
 package forAll.dao.repository;
 
 import forAll.hibernate.Controller.models.Course;
+import forAll.hibernate.Controller.models.Groups;
 
 import java.util.List;
 
@@ -16,4 +17,5 @@ public interface CourseDao {
     void deleteAll();
 
     void updateById(Long id, Course course);
+    List<Groups> connectionFindAll(Long id,Course course);
 }

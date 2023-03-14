@@ -12,5 +12,6 @@
 </head>
 <body>
 <h1>${com}</h1>
+<h1>${example}</h1>
 </body>
 </html>

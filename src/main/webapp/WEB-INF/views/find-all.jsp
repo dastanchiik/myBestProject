@@ -42,6 +42,11 @@
             <button type="submit">UPDATE</button>
             </form>
         </td>
+        <td>
+            <form action="/find/${company.id}" method="get">
+                <button type="submit">CONNECTIONS</button>
+            </form>
+        </td>
     </tr>
     </c:forEach>
     </tbody>

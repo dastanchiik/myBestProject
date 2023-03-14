@@ -10,7 +10,7 @@ public interface GroupDao {
 
     Groups getById(Long id);
 
-    List getALl();
+    List<Groups> getALl();
 
     void deleteById(Long id);
 

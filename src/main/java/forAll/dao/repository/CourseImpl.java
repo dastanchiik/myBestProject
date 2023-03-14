@@ -1,13 +1,16 @@
 package forAll.dao.repository;
 
 import forAll.hibernate.Controller.models.Course;
+import forAll.hibernate.Controller.models.Groups;
 import jakarta.transaction.Transactional;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Repository
 @Transactional
@@ -15,7 +18,8 @@ import java.util.List;
 public class CourseImpl implements CourseDao{
     @Autowired
     private SessionFactory connection;
-
+    @Autowired
+    private GroupDao groupDao;
     @Override
     public void save(Course course){
         Session session = connection.getCurrentSession();
@@ -56,4 +60,25 @@ public class CourseImpl implements CourseDao{
         course1.setDuration(course.getDuration());
         session.merge(course1);
     }
+
+    @Override
+    public List<Groups> connectionFindAll(Long id,Course course) {
+        List<Course>courses = new ArrayList<>();
+        courses.add(course);
+        if (course == null) {
+            return new ArrayList<>();
+        }
+        Groups groups = new Groups();
+        groups.setCourses(courses);
+        List<Groups> groups1 = new ArrayList<>();
+        groups1.add(groups);
+        for (Groups groups12 : groupDao.getALl()) {
+            Groups groups2 = groupDao.getById(groups.getId());
+            if (Objects.equals(groups2.getCompany().getId(), course.getId())) {
+                groups1.add(groups12);
+            }
+        }
+        return groups1;
+    }
+
 }
