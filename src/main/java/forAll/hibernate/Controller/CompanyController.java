@@ -8,12 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 @Controller
 public class CompanyController {
-//        private final CompanyDao companyDao;
-//
-//    public CompanyController(CompanyDao companyDao) {
-//        this.companyDao = companyDao;
-//    }
-
     private final CompanyDao companyRepository;
 
     @Autowired

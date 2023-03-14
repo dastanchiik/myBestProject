@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class StudentController {
-    private final StudentDao companyDao;
+    private final StudentDao studentDao;
     private final GroupDao groupDao;
 
     public StudentController(StudentDao companyDao, GroupDao groupDao) {
-        this.companyDao = companyDao;
+        this.studentDao = companyDao;
         this.groupDao = groupDao;
     }
 
     @GetMapping("/students")
     public String findAll(Model model) {
-        model.addAttribute("all", companyDao.getALl());
+        model.addAttribute("all", studentDao.getALl());
         return "find-all-student";
     }
 
@@ -31,7 +31,7 @@ public class StudentController {
         student.setStudyFormat(StudyFormat.valueOf(format));
         student.setLastName(lName);
         student.setEmail(email);
-        companyDao.save(student);
+        studentDao.save(student);
         return "redirect:/students";
     }
 
@@ -43,21 +43,21 @@ public class StudentController {
 
     @GetMapping("/deleteStudent/{id}")
     public String deleteById(@PathVariable Long id) {
-        Student company = companyDao.getById(id);
-        companyDao.deleteById(company.getId());
+        Student company = studentDao.getById(id);
+        studentDao.deleteById(company.getId());
         return "redirect:/students";
     }
 
     @GetMapping("/get/student/by/{id}")
     public String getById(Model model, @PathVariable Long id) {
-        Student company = companyDao.getById(id);
+        Student company = studentDao.getById(id);
         model.addAttribute("company", company);
         return "find-student";
     }
 
     @GetMapping("/izmenit/student/{id}")
     public String updatePersonForm(@PathVariable("id") Long id, Model model) {
-        Student company = companyDao.getById(id);
+        Student company = studentDao.getById(id);
         model.addAttribute("company", company);
         return "update-student-form";
     }
@@ -75,13 +75,13 @@ public class StudentController {
         student.setLastName(lastName);
         student.setEmail(email);
         student.setStudyFormat(StudyFormat.valueOf(format));
-        companyDao.updateById(id,student);
+        studentDao.updateById(id,student);
         return "redirect:/students";
     }
 
     @GetMapping("/removeAll/student")
     public String clear() {
-        companyDao.deleteAll();
+        studentDao.deleteAll();
         return "redirect:/students";
     }
 }

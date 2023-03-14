@@ -32,6 +32,7 @@ public class CourseController {
         Course course = new Course();
         course.setCourseName(name);
         course.setDuration(duration);
+        course.setCompany(company);
         courseDao.save(course);
         return "redirect:/courses";
     }

@@ -24,7 +24,7 @@
         <label for="duration">Duration</label>
         <input type="text" class="form-control" name="duration" id="duration" placeholder="Enter duration">
         <c:forEach items="${connection}" var="company">
-            <input type="radio" id="${company.id}" name="id" value="${company.id}">
+            <input type="checkbox" id="${company.id}" name="id" value="${company.id}">
             <label for="${company.id}">${company.companyName}</label>
         </c:forEach>
     </div>

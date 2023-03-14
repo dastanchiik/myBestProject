@@ -9,17 +9,17 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class TeacherController {
-    private final TeacherDao companyDao;
+    private final TeacherDao teacherDao;
     private final CourseDao courseDao;
 
     public TeacherController(TeacherDao companyDao, CourseDao courseDao) {
-        this.companyDao = companyDao;
+        this.teacherDao = companyDao;
         this.courseDao = courseDao;
     }
 
     @GetMapping("/teachers")
     public String findAll(Model model) {
-        model.addAttribute("all", companyDao.getALl());
+        model.addAttribute("all", teacherDao.getALl());
         return "find-all-teacher";
     }
 
@@ -29,33 +29,33 @@ public class TeacherController {
         teacher.setFirstName(fName);
         teacher.setLastName(lName);
         teacher.setEmail(email);
-        companyDao.save(teacher);
+        teacherDao.save(teacher);
         return "redirect:/teachers";
     }
 
     @GetMapping("/teacherForm")
     public String saveCompanyPage(Model model) {
-        model.addAttribute("courseConnectionWithTeacher");
+        model.addAttribute("courseConnectionWithTeacher",courseDao.getALl());
         return "teacher-save";
     }
 
     @GetMapping("/deleteTeacher/{id}")
     public String deleteById(@PathVariable Long id) {
-        Teacher company = companyDao.getById(id);
-        companyDao.deleteById(company.getId());
+        Teacher company = teacherDao.getById(id);
+        teacherDao.deleteById(company.getId());
         return "redirect:/teachers";
     }
 
     @GetMapping("/get/teacher/by/{id}")
     public String getById(Model model, @PathVariable Long id) {
-        Teacher company = companyDao.getById(id);
+        Teacher company = teacherDao.getById(id);
         model.addAttribute("company", company);
         return "find-teacher";
     }
 
     @GetMapping("/zamenit/teacher/{id}")
     public String updatePersonForm(@PathVariable("id") Long id, Model model) {
-        Teacher company = companyDao.getById(id);
+        Teacher company = teacherDao.getById(id);
         model.addAttribute("company", company);
         return "update-teacher-form";
     }
@@ -71,13 +71,13 @@ public class TeacherController {
         teacher.setFirstName(firstName);
         teacher.setLastName(lastName);
         teacher.setEmail(email);
-        companyDao.updateById(id, teacher);
+        teacherDao.updateById(id, teacher);
         return "redirect:/teachers";
     }
 
     @GetMapping("/allRemove/teacher")
     public String clear() {
-        companyDao.deleteAll();
+        teacherDao.deleteAll();
         return "redirect:/teachers";
     }
 }

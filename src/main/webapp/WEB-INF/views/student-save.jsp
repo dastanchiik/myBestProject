@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: dastan
@@ -17,6 +18,10 @@
     <label>last name:</label><input type="text" name="lName">
     <label>email</label><input type="text" name="email">
     <label>format:</label><input type="text" name="format">
+    <c:forEach items="${groupConnection}" var="company">
+        <input type="checkbox" id="${company.id}" name="id" value="${company.id}">
+        <label for="${company.id}">${company.groupName}</label>
+    </c:forEach>
     <input type="submit" value="save">
 </form>
 </body>
