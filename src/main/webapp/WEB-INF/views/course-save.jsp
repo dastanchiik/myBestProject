@@ -28,7 +28,7 @@
             <label for="${company.id}">${company.companyName}</label>
         </c:forEach>
     </div>
-    <button type="submit" class="btn btn-primary" value="save">Submit</button>
+    <button type="submit" value="save">Submit</button>
 </form>
 </body>
 </html>

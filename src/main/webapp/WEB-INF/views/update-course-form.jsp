@@ -12,7 +12,7 @@
     <style><%@include file="/WEB-INF/views/css/form.css"%></style>
 </head>
 <body>
-<h1>Update company</h1>
+<h1>Update course</h1>
 <form action="/course/update/${course.id}" method="post">
   <label>Course name:</label><input value="${course.courseName}" type="text" name="courseName"><br>
   <label>duration:</label><input value="${course.duration}" placeholder="number" type="number" name="duration">

@@ -39,7 +39,7 @@ public class GroupImpl implements GroupDao{
     @Override
     public void deleteAll() {
         Session session = connection.getCurrentSession();
-        session.createQuery("delete from Groups ");
+        session.createQuery("delete from Groups ").executeUpdate();
     }
 
     @Override

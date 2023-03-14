@@ -39,7 +39,7 @@ public class StudentImpl implements StudentDao{
     @Override
     public void deleteAll() {
         Session session = connection.getCurrentSession();
-        session.createQuery("delete from Student");
+        session.createQuery("delete from Student").executeUpdate();
     }
 
     @Override

@@ -13,6 +13,7 @@
     <style><%@include file="/WEB-INF/views/css/form.css"%></style>
 </head>
 <body>
+<h1>Save student</h1>
 <form action="/saveStudent" method="post">
     <label>first name:</label><input type="text" name="name">
     <label>last name:</label><input type="text" name="lName">

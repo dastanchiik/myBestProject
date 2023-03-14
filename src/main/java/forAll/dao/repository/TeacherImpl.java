@@ -40,7 +40,7 @@ public class TeacherImpl implements TeacherDao{
     @Override
     public void deleteAll() {
         Session session = connection.getCurrentSession();
-        session.createQuery("delete from Teacher ");
+        session.createQuery("delete from Teacher ").executeUpdate();
     }
 
     @Override

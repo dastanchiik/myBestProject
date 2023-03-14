@@ -45,7 +45,6 @@
 </table>
 <div>
     <button><a href="/groupForm">create new group</a></button><br>
-    <button><a href="/deleteAll/group">delete all</a></button><br>
     <button><a href="/companies">main</a></button>
 </div>
 </body>

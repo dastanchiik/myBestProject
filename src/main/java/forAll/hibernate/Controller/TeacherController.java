@@ -2,6 +2,8 @@ package forAll.hibernate.Controller;
 
 import forAll.dao.repository.CourseDao;
 import forAll.dao.repository.TeacherDao;
+import forAll.hibernate.Controller.models.Course;
+import forAll.hibernate.Controller.models.Groups;
 import forAll.hibernate.Controller.models.Teacher;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,11 +26,14 @@ public class TeacherController {
     }
 
     @PostMapping("/saveTeacher")
-    private String saveStudent(@RequestParam("fName") String fName,@RequestParam("lName") String lName,@RequestParam("email") String email) {
+    private String saveStudent(@RequestParam("fName") String fName,@RequestParam("lName") String lName,@RequestParam("email") String email,
+                               @RequestParam("id") Long id) {
+        Course course = courseDao.getById(id);
         Teacher teacher = new Teacher();
         teacher.setFirstName(fName);
         teacher.setLastName(lName);
         teacher.setEmail(email);
+        teacher.setCourse(course);
         teacherDao.save(teacher);
         return "redirect:/teachers";
     }

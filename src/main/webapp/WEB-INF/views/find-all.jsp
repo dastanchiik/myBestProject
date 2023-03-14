@@ -48,7 +48,6 @@
 </table>
 <div class="button">
 <button><a href="/companyForm" class="company">create new company</a></button><br>
-<button><a href="/clear" class="all">delete all</a></button>
 </div>
 </body>
 </html>

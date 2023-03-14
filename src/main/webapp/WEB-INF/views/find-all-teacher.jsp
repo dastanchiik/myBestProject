@@ -46,7 +46,6 @@
     </tbody>
 </table>
 <button><a href="/teacherForm">create new teacher</a></button>
-<button><a href="/allRemove/teacher">delete all</a></button>
 <button><a href="/companies">main</a></button>
 </body>
 </html>

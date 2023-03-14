@@ -2,6 +2,7 @@ package forAll.hibernate.Controller;
 
 import forAll.dao.repository.GroupDao;
 import forAll.dao.repository.StudentDao;
+import forAll.hibernate.Controller.models.Groups;
 import forAll.hibernate.Controller.models.Student;
 import forAll.hibernate.Controller.models.StudyFormat;
 import org.springframework.stereotype.Controller;
@@ -25,12 +26,16 @@ public class StudentController {
     }
 
     @PostMapping("/saveStudent")
-    private String saveStudent(@RequestParam("name") String name,@RequestParam("format") String format,@RequestParam("lName") String lName,@RequestParam("email") String email) {
+    private String saveStudent(@RequestParam("name") String name,@RequestParam("format") String format,@RequestParam("lName") String lName,@RequestParam("email") String email,
+    @RequestParam("id") Long id) {
+        Groups groups = groupDao.getById(id);
         Student student = new Student();
         student.setFirstName(name);
         student.setStudyFormat(StudyFormat.valueOf(format));
         student.setLastName(lName);
+        student.setGroup(groups);
         student.setEmail(email);
+
         studentDao.save(student);
         return "redirect:/students";
     }

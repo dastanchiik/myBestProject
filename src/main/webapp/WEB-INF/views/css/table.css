@@ -69,4 +69,9 @@ button:hover {
 }
 body{
     background-image: url("https://catherineasquithgallery.com/uploads/posts/2021-02/1614409383_56-p-fon-rabochego-stola-razmitii-temnii-63.jpg");
+    background-position: center 20%;
+    /* You can adjust the values to your preference */
+    background-size: cover;
+    /* This will make the background image cover the entire element */
+    height: 100vh;
 }

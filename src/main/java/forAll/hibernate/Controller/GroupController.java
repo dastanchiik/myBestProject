@@ -3,10 +3,14 @@ package forAll.hibernate.Controller;
 import forAll.dao.repository.CompanyDao;
 import forAll.dao.repository.CourseDao;
 import forAll.dao.repository.GroupDao;
+import forAll.hibernate.Controller.models.Company;
+import forAll.hibernate.Controller.models.Course;
 import forAll.hibernate.Controller.models.Groups;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 
 @Controller
 public class GroupController {
@@ -27,11 +31,18 @@ public class GroupController {
     }
 
     @PostMapping("/saveGroups")
-    private String saveStudent(@RequestParam("name") String name, @RequestParam("start") String start, @RequestParam("finish") String finish) {
+    private String saveStudent(@RequestParam("name") String name, @RequestParam("start") String start, @RequestParam("finish") String finish,
+                               @RequestParam("companyId") Long id,@RequestParam("courseId") Long id1) {
+        Company company = companyDao.getById(id);
+        Course course = courseDao.getById(id1);
+        ArrayList<Course>courses = new ArrayList<>();
+        courses.add(course);
         Groups group = new Groups();
         group.setGroupName(name);
         group.setDateOfStart(start);
         group.setDateOfFinish(finish);
+        group.setCompany(company);
+        group.setCourses(courses);
         groupDao.save(group);
         return "redirect:/groups";
     }

@@ -12,6 +12,7 @@
     <style><%@include file="/WEB-INF/views/css/form.css"%></style>
 </head>
 <body>
+<h1>Update teacher</h1>
 <form action="/teacher/update/${company.id}" method="post">
     <label>first name:</label><input value="${company.firstName}" type="text" name="fName">
     <label>last name:</label><input value="${company.lastName}" type="text" name="lName">

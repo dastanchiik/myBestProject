@@ -21,13 +21,13 @@
     <br>
     <h1>company connection</h1>
     <c:forEach items="${companyConnection}" var="company">
-        <input type="checkbox" id="${company.id}" name="id" value="${company.id}">
+        <input type="checkbox" id="${company.id}" name="companyId" value="${company.id}">
         <label for="${company.id}">${company.companyName}</label>
     </c:forEach>
     <br>
     <h1>course connection</h1>
     <c:forEach items="${courseConnection}" var="company">
-        <input type="checkbox" id="${company.id}" name="id" value="${company.id}">
+        <input type="checkbox" id="${company.id}" name="courseId" value="${company.id}">
         <label for="${company.id}">${company.courseName}</label>
     </c:forEach>
     <input type="submit" value="save">

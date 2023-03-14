@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>Title</title>
+  <style><%@include file="/WEB-INF/views/css/forFind.css"%></style>
 </head>
 <body>
 <table border="2px">

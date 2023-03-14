@@ -45,7 +45,6 @@
 </table>
 <div>
 <button><a href="/courseForm">create new course</a></button><br>
-<button><a href="/clearAll/course">delete all</a></button><br>
 <button><a href="/companies">main</a></button>
 </div>
 </body>

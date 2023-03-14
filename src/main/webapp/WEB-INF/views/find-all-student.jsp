@@ -46,7 +46,6 @@
     </tbody>
 </table>
 <button><a href="/studentForm">create new student</a></button>
-<button><a href="/removeAll/student">delete all</a></button>
 <button><a href="/companies">main</a></button>
 </body>
 </html>
