@@ -33,9 +33,7 @@ public class GroupImpl implements GroupDao{
     @Override
     public void deleteById(Long id){
         Session session = connection.getCurrentSession();
-        session.createQuery( "delete from Groups where id=:Id2" ).setParameter( "Id2", id ).executeUpdate();
-        session.createQuery( "delete from Student where id=:Id3" ).setParameter( "Id3", id ).executeUpdate();
-        session.createQuery( "delete from Teacher where id=:Id4" ).setParameter( "Id4", id ).executeUpdate();
+        session.delete(session.get(Groups.class,id));
     }
 
     @Override

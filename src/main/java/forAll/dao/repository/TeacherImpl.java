@@ -34,7 +34,7 @@ public class TeacherImpl implements TeacherDao{
     @Override
     public void deleteById(Long id){
         Session session = connection.getCurrentSession();
-        session.createQuery( "delete from Teacher where id=:Id4" ).setParameter( "Id4", id ).executeUpdate();
+        session.delete(session.get(Teacher.class,id));
     }
 
     @Override

@@ -33,7 +33,7 @@ public class StudentImpl implements StudentDao{
     @Override
     public void deleteById(Long id){
         Session session = connection.getCurrentSession();
-        session.createQuery( "delete from Student where id=:Id3" ).setParameter( "Id3", id ).executeUpdate();
+        session.delete(session.get(Student.class,id));
     }
 
     @Override

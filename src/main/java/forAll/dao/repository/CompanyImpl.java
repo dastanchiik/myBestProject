@@ -34,12 +34,7 @@ public class CompanyImpl implements CompanyDao{
     @Override
     public void deleteById(Long id){
         Session session = connection.getCurrentSession();
-        session.createQuery( "delete from Company where id=:Id" ).setParameter( "Id", id ).executeUpdate();
-        session.createQuery( "delete from Course where id=:Id1" ).setParameter( "Id1", id ).executeUpdate();
-        session.createQuery( "delete from Groups where id=:Id2" ).setParameter( "Id2", id ).executeUpdate();
-        session.createQuery( "delete from Student where id=:Id3" ).setParameter( "Id3", id ).executeUpdate();
-        session.createQuery( "delete from Teacher where id=:Id4" ).setParameter( "Id4", id ).executeUpdate();
-
+       session.delete(session.get(Company.class,id));
     }
 
     @Override
