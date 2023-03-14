@@ -29,7 +29,7 @@ public class CourseImpl implements CourseDao{
     }
 
     @Override
-    public List getALl() {
+    public List<Course> getALl() {
         Session session = connection.getCurrentSession();
         return session.createQuery("select p from Course p").getResultList();
     }

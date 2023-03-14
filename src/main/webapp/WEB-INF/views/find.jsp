@@ -28,6 +28,7 @@
     </tr>
     </tbody>
 </table>
+<%--<h1>${company}</h1>--%>
 <a href="/companies">main</a>
 </body>
 </html>

@@ -9,7 +9,7 @@ public interface CourseDao {
 
     Course getById(Long id);
 
-    List getALl();
+    List<Course> getALl();
 
     void deleteById(Long id);
 

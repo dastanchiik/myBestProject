@@ -19,6 +19,11 @@ public class CompanyController {
         model.addAttribute( "all",companyRepository.getALl() );
         return "find-all";
     }
+    @GetMapping("/find/{id}")
+    public String relation(Model model,@PathVariable Long id){
+        model.addAttribute("com",companyRepository.relationship(id));
+        return "kol";
+    }
 
     @PostMapping("/saveCompany")
     private String saveStudent(@RequestParam("name") String name,@RequestParam("located") String located){
