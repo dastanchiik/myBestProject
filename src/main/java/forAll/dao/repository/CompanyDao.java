@@ -1,7 +1,6 @@
 package forAll.dao.repository;
 
 import forAll.hibernate.Controller.models.Company;
-import forAll.hibernate.Controller.models.Course;
 
 import java.util.List;
 
@@ -16,6 +15,4 @@ public interface CompanyDao {
         void deleteAll();
 
         void updateById(Long id, Company company);
-
-        List<Course> relationship(Long id);
 }

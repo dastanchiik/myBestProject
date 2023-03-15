@@ -10,7 +10,7 @@ public interface CourseDao {
 
     Course getById(Long id);
 
-    List<Course> getALl();
+    List getALl();
 
     void deleteById(Long id);
 
