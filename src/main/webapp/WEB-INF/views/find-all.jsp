@@ -43,7 +43,7 @@
             </form>
         </td>
         <td>
-            <form action="/find/${company.id}" method="get">
+            <form action="/findAll/${company.id}" method="get">
                 <button type="submit">CONNECTIONS</button>
             </form>
         </td>

@@ -1,5 +1,6 @@
 package forAll.dao.repository;
 
+import forAll.hibernate.Controller.models.Company;
 import forAll.hibernate.Controller.models.Course;
 import forAll.hibernate.Controller.models.Groups;
 import jakarta.transaction.Transactional;
@@ -19,7 +20,7 @@ public class CourseImpl implements CourseDao{
     @Autowired
     private SessionFactory connection;
     @Autowired
-    private GroupDao groupDao;
+    private CompanyDao companyDao;
     @Override
     public void save(Course course){
         Session session = connection.getCurrentSession();
@@ -33,7 +34,7 @@ public class CourseImpl implements CourseDao{
     }
 
     @Override
-    public List getALl() {
+    public List<Course> getALl() {
         Session session = connection.getCurrentSession();
         return session.createQuery("select p from Course p").getResultList();
     }
@@ -62,23 +63,16 @@ public class CourseImpl implements CourseDao{
     }
 
     @Override
-    public List<Groups> connectionFindAll(Long id,Course course) {
-        List<Course>courses = new ArrayList<>();
-        courses.add(course);
-        if (course == null) {
-            return new ArrayList<>();
-        }
-        Groups groups = new Groups();
-        groups.setCourses(courses);
-        List<Groups> groups1 = new ArrayList<>();
-        groups1.add(groups);
-        for (Groups groups12 : groupDao.getALl()) {
-            Groups groups2 = groupDao.getById(groups.getId());
-            if (Objects.equals(groups2.getCompany().getId(), course.getId())) {
-                groups1.add(groups12);
+    public List<Course> connectionFindAll(Long id) {
+        List<Course> courses = new ArrayList<>();
+        Company company = companyDao.getById(id);
+        for (Course course2 : getALl()) {
+            Course course1 = getById(course2.getId());
+            if (course1.getCompany().getId() == company.getId()) {
+                courses.add(course1);
             }
         }
-        return groups1;
+        return courses;
     }
 
 }

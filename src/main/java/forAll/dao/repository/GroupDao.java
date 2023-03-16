@@ -15,4 +15,5 @@ public interface GroupDao {
     void deleteById(Long id);
 
     void updateById(Long id, Groups group);
+    List<Groups>findAllGroups(Long id);
 }

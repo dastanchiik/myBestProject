@@ -9,10 +9,11 @@ public interface TeacherDao{
 
     Teacher getById(Long id);
 
-    List getALl();
+    List<Teacher> getALl();
 
     void deleteById(Long id);
     void deleteAll();
 
     void updateById(Long id, Teacher teacher);
+    List<Teacher>findAllTeacher(Long id);
 }

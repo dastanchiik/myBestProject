@@ -10,12 +10,12 @@ public interface CourseDao {
 
     Course getById(Long id);
 
-    List getALl();
+    List<Course> getALl();
 
     void deleteById(Long id);
 
     void deleteAll();
 
     void updateById(Long id, Course course);
-    List<Groups> connectionFindAll(Long id,Course course);
+    List<Course> connectionFindAll(Long id);
 }

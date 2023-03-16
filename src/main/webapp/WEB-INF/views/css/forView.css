@@ -1,0 +1,20 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+table th,
+table td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+table th {
+    background-color: #eee;
+    font-weight: bold;
+}
+
+h3 {
+    margin-top: 20px;
+}

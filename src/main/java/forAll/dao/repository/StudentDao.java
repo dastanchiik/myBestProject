@@ -9,10 +9,11 @@ public interface StudentDao {
 
     Student getById(Long id);
 
-    List getALl();
+    List<Student> getALl();
 
     void deleteById(Long id);
     void deleteAll();
 
     void updateById(Long id, Student student);
+    List<Student>findAllStudent(Long id);
 }
