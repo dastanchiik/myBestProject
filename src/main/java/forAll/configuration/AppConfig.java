@@ -36,7 +36,7 @@ public class AppConfig implements WebMvcConfigurer {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan(new String []{"forAll.hibernate"});
+        sessionFactory.setPackagesToScan(new String[]{"forAll.hibernate"});
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
@@ -45,7 +45,7 @@ public class AppConfig implements WebMvcConfigurer {
         Properties properties = new Properties();
         properties.setProperty(Environment.DIALECT, "org.hibernate.dialect.PostgreSQLDialect");
         properties.setProperty(Environment.SHOW_SQL, "true");
-        properties.setProperty( Environment.HBM2DDL_AUTO,"update");
+        properties.setProperty(Environment.HBM2DDL_AUTO, "update");
         return properties;
     }
 

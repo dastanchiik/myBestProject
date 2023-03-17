@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface GroupDao {
     void save(Groups group);
+
     void deleteAll();
 
     Groups getById(Long id);
@@ -15,5 +16,6 @@ public interface GroupDao {
     void deleteById(Long id);
 
     void updateById(Long id, Groups group);
-    List<Groups>findAllGroups(Long id);
+
+    List<Groups> findAllGroups(Long id);
 }

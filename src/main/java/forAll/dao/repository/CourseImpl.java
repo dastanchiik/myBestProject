@@ -16,21 +16,23 @@ import java.util.Objects;
 @Repository
 @Transactional
 
-public class CourseImpl implements CourseDao{
+public class CourseImpl implements CourseDao {
     @Autowired
     private SessionFactory connection;
     @Autowired
     private CompanyDao companyDao;
+
     @Override
-    public void save(Course course){
+    public void save(Course course) {
         Session session = connection.getCurrentSession();
         session.save(course);
         System.out.println("saved ✅");
     }
+
     @Override
-    public Course getById(Long id){
+    public Course getById(Long id) {
         Session session = connection.getCurrentSession();
-        return session.get(Course.class,id);
+        return session.get(Course.class, id);
     }
 
     @Override
@@ -38,10 +40,11 @@ public class CourseImpl implements CourseDao{
         Session session = connection.getCurrentSession();
         return session.createQuery("select p from Course p").getResultList();
     }
+
     @Override
-    public void deleteById(Long id){
+    public void deleteById(Long id) {
         Session session = connection.getCurrentSession();
-        session.delete(session.get(Course.class,id));
+        session.delete(session.get(Course.class, id));
     }
 
     @Override

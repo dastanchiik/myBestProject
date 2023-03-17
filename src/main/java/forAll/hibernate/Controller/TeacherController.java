@@ -26,7 +26,7 @@ public class TeacherController {
     }
 
     @PostMapping("/saveTeacher")
-    private String saveStudent(@RequestParam("fName") String fName,@RequestParam("lName") String lName,@RequestParam("email") String email,
+    private String saveStudent(@RequestParam("fName") String fName, @RequestParam("lName") String lName, @RequestParam("email") String email,
                                @RequestParam("id") Long id) {
         Course course = courseDao.getById(id);
         Teacher teacher = new Teacher();
@@ -40,7 +40,7 @@ public class TeacherController {
 
     @GetMapping("/teacherForm")
     public String saveCompanyPage(Model model) {
-        model.addAttribute("courseConnectionWithTeacher",courseDao.getALl());
+        model.addAttribute("courseConnectionWithTeacher", courseDao.getALl());
         return "teacher-save";
     }
 

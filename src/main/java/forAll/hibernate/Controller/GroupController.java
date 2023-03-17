@@ -32,10 +32,10 @@ public class GroupController {
 
     @PostMapping("/saveGroups")
     private String saveStudent(@RequestParam("name") String name, @RequestParam("start") String start, @RequestParam("finish") String finish,
-                               @RequestParam("companyId") Long id,@RequestParam("courseId") Long id1) {
+                               @RequestParam("companyId") Long id, @RequestParam("courseId") Long id1) {
         Company company = companyDao.getById(id);
         Course course = courseDao.getById(id1);
-        ArrayList<Course>courses = new ArrayList<>();
+        ArrayList<Course> courses = new ArrayList<>();
         courses.add(course);
         Groups group = new Groups();
         group.setGroupName(name);
@@ -49,8 +49,8 @@ public class GroupController {
 
     @GetMapping("/groupForm")
     public String saveCompanyPage(Model model) {
-        model.addAttribute("companyConnection",companyDao.getALl());
-        model.addAttribute("courseConnection",courseDao.getALl());
+        model.addAttribute("companyConnection", companyDao.getALl());
+        model.addAttribute("courseConnection", courseDao.getALl());
         return "group-save";
     }
 

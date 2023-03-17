@@ -26,6 +26,7 @@ public class CompanyController {
         this.studentDao = studentDao;
         this.teacherDao = teacherDao;
     }
+
     @GetMapping("/companies")
     public String findAll(Model model) {
         model.addAttribute("all", companyDao.getALl());
@@ -40,16 +41,17 @@ public class CompanyController {
         companyDao.save(company);
         return "redirect:/companies";
     }
+
     @GetMapping("/findAll/{id}")
-    public String findAllById(@PathVariable Long id,Model model){
-        model.addAttribute("company",companyDao.getById(id));
-        model.addAttribute("courses",courseDao.connectionFindAll(id));
-        model.addAttribute("groups",groupDao.findAllGroups(id));
+    public String findAllById(@PathVariable Long id, Model model) {
+        model.addAttribute("company", companyDao.getById(id));
+        model.addAttribute("courses", courseDao.connectionFindAll(id));
+        model.addAttribute("groups", groupDao.findAllGroups(id));
         for (int i = 0; i <= teacherDao.findAllTeacher(id).size(); i++) {
-            model.addAttribute("teachers",teacherDao.findAllTeacher(id));
+            model.addAttribute("teachers", teacherDao.findAllTeacher(id));
         }
         for (int i = 0; i <= studentDao.findAllStudent(id).size(); i++) {
-            model.addAttribute("students",studentDao.findAllStudent(id));
+            model.addAttribute("students", studentDao.findAllStudent(id));
         }
         return "viewer";
     }

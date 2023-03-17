@@ -17,5 +17,6 @@ public interface CourseDao {
     void deleteAll();
 
     void updateById(Long id, Course course);
+
     List<Course> connectionFindAll(Long id);
 }

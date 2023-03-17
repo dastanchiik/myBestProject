@@ -26,8 +26,8 @@ public class StudentController {
     }
 
     @PostMapping("/saveStudent")
-    private String saveStudent(@RequestParam("name") String name,@RequestParam("format") String format,@RequestParam("lName") String lName,@RequestParam("email") String email,
-    @RequestParam("id") Long id) {
+    private String saveStudent(@RequestParam("name") String name, @RequestParam("format") String format, @RequestParam("lName") String lName, @RequestParam("email") String email,
+                               @RequestParam("id") Long id) {
         Groups groups = groupDao.getById(id);
         Student student = new Student();
         student.setFirstName(name);
@@ -42,7 +42,7 @@ public class StudentController {
 
     @GetMapping("/studentForm")
     public String saveCompanyPage(Model model) {
-        model.addAttribute("groupConnection",groupDao.getALl());
+        model.addAttribute("groupConnection", groupDao.getALl());
         return "student-save";
     }
 
@@ -80,7 +80,7 @@ public class StudentController {
         student.setLastName(lastName);
         student.setEmail(email);
         student.setStudyFormat(StudyFormat.valueOf(format));
-        studentDao.updateById(id,student);
+        studentDao.updateById(id, student);
         return "redirect:/students";
     }
 

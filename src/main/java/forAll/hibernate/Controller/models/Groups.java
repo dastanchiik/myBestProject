@@ -43,7 +43,10 @@ public class Groups {
         this.courses = courses;
     }
 
-    public Long getId() {return id;}
+    public Long getId() {
+        return id;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -99,13 +102,13 @@ public class Groups {
     @Override
     public String toString() {
         return "Group{" +
-                "id=" + id +
-                ", groupName='" + groupName + '\'' +
-                ", dateOfStart='" + dateOfStart + '\'' +
-                ", dateOfFinish='" + dateOfFinish + '\'' +
+               "id=" + id +
+               ", groupName='" + groupName + '\'' +
+               ", dateOfStart='" + dateOfStart + '\'' +
+               ", dateOfFinish='" + dateOfFinish + '\'' +
 //                ", company=" + company +
-                ", students=" + students +
+               ", students=" + students +
 //                ", courses=" + courses +
-                '}';
+               '}';
     }
 }

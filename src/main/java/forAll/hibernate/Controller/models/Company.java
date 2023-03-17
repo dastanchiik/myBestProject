@@ -77,11 +77,11 @@ public class Company {
     @Override
     public String toString() {
         return "Company{" +
-                "id=" + id +
-                ", companyName='" + companyName + '\'' +
-                ", locatedCountry='" + locatedCountry + '\'' +
-                ", courses=" + courses +
-                ", groups=" + groups +
-                '}';
+               "id=" + id +
+               ", companyName='" + companyName + '\'' +
+               ", locatedCountry='" + locatedCountry + '\'' +
+               ", courses=" + courses +
+               ", groups=" + groups +
+               '}';
     }
 }

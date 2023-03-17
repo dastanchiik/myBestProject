@@ -15,22 +15,23 @@ import java.util.Objects;
 
 @Repository
 @Transactional
-public class GroupImpl implements GroupDao{
+public class GroupImpl implements GroupDao {
     @Autowired
     private SessionFactory connection;
     @Autowired
     private CompanyDao companyDao;
 
     @Override
-    public void save(Groups group){
+    public void save(Groups group) {
         Session session = connection.getCurrentSession();
         session.save(group);
         System.out.println("saved ✅");
     }
+
     @Override
-    public Groups getById(Long id){
+    public Groups getById(Long id) {
         Session session = connection.getCurrentSession();
-        return session.get(Groups.class,id);
+        return session.get(Groups.class, id);
     }
 
     @Override
@@ -38,10 +39,11 @@ public class GroupImpl implements GroupDao{
         Session session = connection.getCurrentSession();
         return session.createQuery("select p from Groups p").getResultList();
     }
+
     @Override
-    public void deleteById(Long id){
+    public void deleteById(Long id) {
         Session session = connection.getCurrentSession();
-        session.delete(session.get(Groups.class,id));
+        session.delete(session.get(Groups.class, id));
     }
 
     @Override
@@ -65,16 +67,6 @@ public class GroupImpl implements GroupDao{
 
     @Override
     public List<Groups> findAllGroups(Long id) {
-//        List<Groups>groups = new ArrayList<>();
-//        Company company = companyDao.getById(id);
-//        for (Groups group:getALl()) {
-//            Groups groups2 = getById(group.getId());
-//            if (group.getCompany().getId()== company.getId()){
-//                groups.add(groups2);
-//            }
-//        }
-//        return groups;
-//    }
         List<Groups> groups = new ArrayList<>();
         Company company = companyDao.getById(id);
         for (Groups groups1 : getALl()) {

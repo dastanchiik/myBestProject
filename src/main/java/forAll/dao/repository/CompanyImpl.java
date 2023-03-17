@@ -11,19 +11,21 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class CompanyImpl implements CompanyDao{
+public class CompanyImpl implements CompanyDao {
     @Autowired
     private SessionFactory connection;
+
     @Override
-    public void save(Company company){
+    public void save(Company company) {
         Session session = connection.getCurrentSession();
-            session.save(company);
-            System.out.println("saved ✅");
+        session.save(company);
+        System.out.println("saved ✅");
     }
+
     @Override
-    public Company getById(Long id){
+    public Company getById(Long id) {
         Session session = connection.getCurrentSession();
-            return session.get(Company.class,id);
+        return session.get(Company.class, id);
     }
 
     @Override
@@ -31,10 +33,11 @@ public class CompanyImpl implements CompanyDao{
         Session session = connection.getCurrentSession();
         return session.createQuery("select company from Company company").getResultList();
     }
+
     @Override
-    public void deleteById(Long id){
+    public void deleteById(Long id) {
         Session session = connection.getCurrentSession();
-       session.delete(session.get(Company.class,id));
+        session.delete(session.get(Company.class, id));
     }
 
     @Override
@@ -45,10 +48,10 @@ public class CompanyImpl implements CompanyDao{
 
     @Override
     public void updateById(Long id, Company company) {
-    Session session = connection.getCurrentSession();
-    Company company1 = getById(id);
-    company1.setCompanyName(company.getCompanyName());
-    company1.setLocatedCountry(company.getLocatedCountry());
-    session.merge(company1);
+        Session session = connection.getCurrentSession();
+        Company company1 = getById(id);
+        company1.setCompanyName(company.getCompanyName());
+        company1.setLocatedCountry(company.getLocatedCountry());
+        session.merge(company1);
     }
 }

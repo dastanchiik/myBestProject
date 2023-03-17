@@ -72,11 +72,11 @@ public class Teacher {
     @Override
     public String toString() {
         return "Teacher{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
+               "id=" + id +
+               ", firstName='" + firstName + '\'' +
+               ", lastName='" + lastName + '\'' +
+               ", email='" + email + '\'' +
 //                ", course=" + course +
-                '}';
+               '}';
     }
 }

@@ -10,23 +10,26 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Repository
 @Transactional
-public class StudentImpl implements StudentDao{
+public class StudentImpl implements StudentDao {
     @Autowired
     private SessionFactory connection;
     @Autowired
     private GroupDao groupDao;
+
     @Override
-    public void save(Student student){
+    public void save(Student student) {
         Session session = connection.getCurrentSession();
         session.save(student);
         System.out.println("saved ✅");
     }
+
     @Override
-    public Student getById(Long id){
+    public Student getById(Long id) {
         Session session = connection.getCurrentSession();
-        return session.get(Student.class,id);
+        return session.get(Student.class, id);
     }
 
     @Override
@@ -34,10 +37,11 @@ public class StudentImpl implements StudentDao{
         Session session = connection.getCurrentSession();
         return session.createQuery("select p from Student p", Student.class).getResultList();
     }
+
     @Override
-    public void deleteById(Long id){
+    public void deleteById(Long id) {
         Session session = connection.getCurrentSession();
-        session.delete(session.get(Student.class,id));
+        session.delete(session.get(Student.class, id));
     }
 
     @Override

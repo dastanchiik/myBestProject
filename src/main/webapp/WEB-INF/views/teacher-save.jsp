@@ -24,7 +24,7 @@
   <label>last name:</label><input type="text" name="lName">
   <label>email:</label><input type="text" name="email">
   <c:forEach items="${courseConnectionWithTeacher}" var="company">
-    <input type="checkbox" id="${company.id}" name="id" value="${company.id}">
+    <input type="radio" id="${company.id}" name="id" value="${company.id}">
     <label for="${company.id}">${company.courseName}</label>
   </c:forEach>
   <input type="submit" value="save">
