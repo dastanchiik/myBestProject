@@ -9,19 +9,28 @@
 <html>
 <head>
     <title>Title</title>
-    <style><%@include file="/WEB-INF/views/css/form.css"%>
+    <style>
+        <%@include file="/WEB-INF/views/css/form.css"%>
     </style>
-
+<%--        <link rel="stylesheet" href="css/form.css">--%>
 </head>
 <body>
-<h1 style="text-align: center">Save company</h1>
+<div class="box">
+<h1>Save company</h1>
 <form action="/saveCompany" method="post">
-    <label >Company name:</label>
-    <input class="form-control" name="name"
-           placeholder="Enter company name">
-    <label for="locatedCountry">Country:</label>
-    <input type="text" class="form-control1" name="located" id="locatedCountry" placeholder="Enter located country">
+    <div class="input-box">
+    <input name="name">
+    <span>Company name:</span>
+        <i></i>
+<%--           placeholder="Enter company name">--%>
+    </div>
+    <div class="input-box">
+    <input type="text" name="located" id="locatedCountry" required = "required">
+    <span for="locatedCountry">Country:</span>
+        <i></i>
+    </div>
     <input type="submit" value="save">
 </form>
+</div>
 </body>
 </html>

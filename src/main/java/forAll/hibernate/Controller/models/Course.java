@@ -18,7 +18,7 @@ public class Course {
     @ManyToOne
     @JoinColumn(name = "company_id")
     private Company company;
-    @OneToOne(mappedBy = "course", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "course", cascade = CascadeType.REMOVE)
     private Teacher teacher;
     @ManyToMany(mappedBy = "courses", cascade = CascadeType.ALL)
     private List<Groups> groups;
