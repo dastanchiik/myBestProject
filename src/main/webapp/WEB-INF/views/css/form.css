@@ -126,7 +126,6 @@
     color: black;
     font-size: 16px;
     position: relative;
-    /*margin-bottom: 20px;*/
     animation: inputBoxAnimation 0.3s ease-in-out forwards;
 }
 
@@ -175,8 +174,7 @@
     width: 100%;
 }
 input[type="submit"] {
-    background-color: black;
-    /*color: white;*/
+    background-color: green;
     padding: 12px 24px;
     border: none;
     border-radius: 4px;
@@ -186,7 +184,6 @@ input[type="submit"] {
     transition: all 0.3s ease;
 }
 input[type="submit"]:hover{
-    /*background-color: black;*/
     color: white;
 }
 

@@ -16,21 +16,20 @@
 </head>
 <body>
 <div class="box">
-<h1>Save company</h1>
-<form action="/saveCompany" method="post">
-    <div class="input-box">
-    <input name="name">
-    <span>Company name:</span>
-        <i></i>
-<%--           placeholder="Enter company name">--%>
-    </div>
-    <div class="input-box">
-    <input type="text" name="located" id="locatedCountry" required = "required">
-    <span for="locatedCountry">Country:</span>
-        <i></i>
-    </div>
-    <input type="submit" value="save">
-</form>
+    <h1>Save company</h1>
+    <form action="/saveCompany" method="post">
+        <div class="input-box">
+            <input type="text" name="name" placeholder="Company name:">
+            <!--            <span>Company name:</span>-->
+            <i></i>
+        </div>
+        <div class="input-box">
+            <input type="text" name="located" id="locatedCountry" placeholder="Country:" required = "required">
+            <!--            <span for="locatedCountry">Country:</span>-->
+            <i></i>
+        </div>
+        <input type="submit" value="save">
+    </form>
 </div>
 </body>
 </html>
