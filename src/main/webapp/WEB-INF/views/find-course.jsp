@@ -30,7 +30,7 @@
 </table>
 <div style="margin: auto">
 <button><a href="/courses">roll-back</a></button>
-<button><a href="/courses">main</a></button>
+<button><a href="/companies">main</a></button>
 </div>
 </body>
 </html>
