@@ -13,15 +13,24 @@
     <style><%@include file="/WEB-INF/views/css/form.css"%></style>
 </head>
 <body>
+<div class="box">
 <h1>Save group</h1>
 <form action="/saveGroups" method="post">
-    <label>group name:</label><input type="text" name="name">
-    <label>date of start:</label><input type="text" name="start">
-    <label>date of finish:</label><input type="text" name="finish">
-    <br>
+    <div class="input-box">
+    <input type="text" name="name" placeholder="Group name:">
+    <i></i>
+    </div>
+    <div class="input-box">
+    <input placeholder="Date of start:" type="text" name="start">
+    <i></i>
+    </div>
+    <div class="input-box">
+    <input placeholder="Date of finish:" type="text" name="finish">
+    <i></i>
+    </div>
     <h1>company connection</h1>
     <c:forEach items="${companyConnection}" var="company">
-        <input type="checkbox" id="${company.id}" name="companyId" value="${company.id}">
+        <input type="radio" id="${company.id}" name="companyId" value="${company.id}">
         <label for="${company.id}">${company.companyName}</label>
     </c:forEach>
     <br>
@@ -32,5 +41,6 @@
     </c:forEach>
     <input type="submit" value="save">
 </form>
+</div>
 </body>
 </html>

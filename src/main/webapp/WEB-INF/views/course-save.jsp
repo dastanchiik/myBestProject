@@ -13,22 +13,23 @@
     <style><%@include file="/WEB-INF/views/css/form.css"%></style>
 </head>
 <body>
-<h1 style="text-align: center">Save COURSE</h1>
+<div class="box">
+<h1>Save COURSE</h1>
 <form action="/saveCourse" method="post">
-    <div class="form-group">
-        <label for="courseName">Course name</label>
-        <input class="form-control" name="name" id="courseName" aria-describedby="courseName"
-               placeholder="Enter course name">
+    <div class="input-box">
+        <input type="text" name="name" placeholder="Course name:">
+    <i></i>
     </div>
-    <div class="form-group">
-        <label for="duration">Duration</label>
-        <input type="text" class="form-control" name="duration" id="duration" placeholder="Enter duration">
+    <div class="input-box">
+        <input type="text" name="duration" placeholder="Duration:">
+    <i></i>
+    </div>
         <c:forEach items="${connection}" var="company">
             <input type="radio" id="${company.id}" name="id" value="${company.id}">
             <label for="${company.id}">${company.companyName}</label>
         </c:forEach>
-    </div>
     <button type="submit" value="save">Submit</button>
 </form>
+</div>
 </body>
 </html>

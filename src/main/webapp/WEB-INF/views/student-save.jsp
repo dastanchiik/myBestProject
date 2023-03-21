@@ -13,17 +13,31 @@
     <style><%@include file="/WEB-INF/views/css/form.css"%></style>
 </head>
 <body>
+<div class="box">
 <h1>Save student</h1>
 <form action="/saveStudent" method="post">
-    <label>first name:</label><input type="text" name="name">
-    <label>last name:</label><input type="text" name="lName">
-    <label>email</label><input type="text" name="email">
-    <label>format:</label><input type="text" name="format">
+    <div class="input-box">
+    <input type="text" name="name" placeholder="first name:">
+        <i></i>
+    </div>
+    <div class="input-box">
+    <input type="text" name="lName" placeholder="last name:">
+        <i></i>
+    </div>
+    <div class="input-box">
+    <input type="text" name="email" placeholder="email:">
+        <i></i>
+    </div>
+    <div class="input-box">
+    <input type="text" name="format" placeholder="Study format:">
+    <i></i>
+    </div>
     <c:forEach items="${groupConnection}" var="company">
         <input type="radio" id="${company.id}" name="id" value="${company.id}">
         <label for="${company.id}">${company.groupName}</label>
     </c:forEach>
     <input type="submit" value="save">
 </form>
+</div>
 </body>
 </html>

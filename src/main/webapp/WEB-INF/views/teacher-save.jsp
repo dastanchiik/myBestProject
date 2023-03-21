@@ -11,18 +11,24 @@
 <head>
     <title>Title</title>
   <style><%@include file="/WEB-INF/views/css/form.css"%>
-  .teacher{
-    transform: translate(0em,0em);
-  }
   </style>
 </head>
 <body>
-<div class="teacher">
+<div class="box">
 <h1>Save teacher</h1>
 <form action="/saveTeacher" method="post">
-  <label>first name:</label><input type="text" name="fName">
-  <label>last name:</label><input type="text" name="lName">
-  <label>email:</label><input type="text" name="email">
+  <div class="input-box">
+  <input type="text" name="fName" placeholder="first name:">
+  <i></i>
+  </div>
+  <div class="input-box">
+  <input type="text" name="lName" placeholder="last name:">
+  <i></i>
+  </div>
+  <div class="input-box">
+  <input type="text" name="email" placeholder="email:">
+    <i></i>
+  </div>
   <c:forEach items="${courseConnectionWithTeacher}" var="company">
     <input type="radio" id="${company.id}" name="id" value="${company.id}">
     <label for="${company.id}">${company.courseName}</label>
