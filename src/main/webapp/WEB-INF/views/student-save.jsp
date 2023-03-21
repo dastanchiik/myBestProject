@@ -33,7 +33,7 @@
     <i></i>
     </div>
     <c:forEach items="${groupConnection}" var="company">
-        <input type="radio" id="${company.id}" name="id" value="${company.id}">
+        <input type="checkbox" id="${company.id}" name="id" value="${company.id}">
         <label for="${company.id}">${company.groupName}</label>
     </c:forEach>
     <input type="submit" value="save">

@@ -25,7 +25,7 @@
     <i></i>
     </div>
         <c:forEach items="${connection}" var="company">
-            <input type="radio" id="${company.id}" name="id" value="${company.id}">
+            <input type="checkbox" id="${company.id}" name="id" value="${company.id}">
             <label for="${company.id}">${company.companyName}</label>
         </c:forEach>
     <button type="submit" value="save">Submit</button>
