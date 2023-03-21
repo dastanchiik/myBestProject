@@ -9,7 +9,9 @@
 <html>
 <head>
     <title>Title</title>
-    <style><%@include file="/WEB-INF/views/css/forFind.css"%></style>
+    <style>
+        <%@include file="/WEB-INF/views/css/forFind.css" %>
+    </style>
 </head>
 <body>
 <table border="1px" style="margin: auto">

@@ -51,7 +51,7 @@ button:hover {
 .container {
     float: left;
     margin-top: 20px;
-    transform: translate(70em,-2em);
+    transform: translate(70em, -2em);
 }
 
 .container button {
@@ -67,7 +67,8 @@ button:hover {
     color: red;
     text-decoration: none;
 }
-body{
+
+body {
     background-image: url("https://catherineasquithgallery.com/uploads/posts/2021-02/1614409383_56-p-fon-rabochego-stola-razmitii-temnii-63.jpg");
     background-position: center 20%;
     /* You can adjust the values to your preference */

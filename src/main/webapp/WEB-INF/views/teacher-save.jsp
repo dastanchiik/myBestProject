@@ -10,31 +10,31 @@
 <html>
 <head>
     <title>Title</title>
-  <style><%@include file="/WEB-INF/views/css/form.css"%>
-  </style>
+    <style><%@include file="/WEB-INF/views/css/form.css"%>
+    </style>
 </head>
 <body>
 <div class="box">
-<h1>Save teacher</h1>
-<form action="/saveTeacher" method="post">
-  <div class="input-box">
-  <input type="text" name="fName" placeholder="first name:">
-  <i></i>
-  </div>
-  <div class="input-box">
-  <input type="text" name="lName" placeholder="last name:">
-  <i></i>
-  </div>
-  <div class="input-box">
-  <input type="text" name="email" placeholder="email:">
-    <i></i>
-  </div>
-  <c:forEach items="${courseConnectionWithTeacher}" var="company">
-    <input type="checkbox" id="${company.id}" name="id" value="${company.id}">
-    <label for="${company.id}">${company.courseName}</label>
-  </c:forEach>
-  <input type="submit" value="save">
-</form>
+    <h1>Save teacher</h1>
+    <form action="/saveTeacher" method="post">
+        <div class="input-box">
+            <input type="text" name="fName" placeholder="first name:">
+            <i></i>
+        </div>
+        <div class="input-box">
+            <input type="text" name="lName" placeholder="last name:">
+            <i></i>
+        </div>
+        <div class="input-box">
+            <input type="text" name="email" placeholder="email:">
+            <i></i>
+        </div>
+        <c:forEach items="${courseConnectionWithTeacher}" var="company">
+            <input type="checkbox" id="${company.id}" name="id" value="${company.id}">
+            <label for="${company.id}">${company.courseName}</label>
+        </c:forEach>
+        <input type="submit" value="save">
+    </form>
 </div>
 </body>
 </html>

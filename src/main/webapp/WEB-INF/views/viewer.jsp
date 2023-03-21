@@ -10,7 +10,9 @@
 <html>
 <head>
     <title>Title</title>
-    <style><%@include file="/WEB-INF/views/css/forView.css"%></style>
+    <style>
+        <%@include file="/WEB-INF/views/css/forView.css" %>
+    </style>
 </head>
 <body>
 <h3>courses:</h3>
@@ -31,9 +33,11 @@
         </tr>
     </c:forEach>
     </tbody>
-</table><br>
+</table>
+<br>
 <h3>groups:</h3>
-<br><table border="2px">
+<br>
+<table border="2px">
     <thead>
     <tr>
         <th>ID</th>
@@ -52,30 +56,34 @@
         </tr>
     </c:forEach>
     </tbody>
-</table><br>
+</table>
+<br>
 <h3>students:</h3>
-<br><table border="2px">
-<thead>
-<tr>
-    <th>Id</th>
-    <th>first name</th>
-    <th>last name</th>
-    <th>email</th>
-</tr>
-</thead>
+<br>
+<table border="2px">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>first name</th>
+        <th>last name</th>
+        <th>email</th>
+    </tr>
+    </thead>
     <tbody>
     <c:forEach items="${students}" var="student">
-    <tr>
-        <td>${student.id}</td>
-        <td>${student.firstName}</td>
-        <td>${student.lastName}</td>
-        <td>${student.email}</td>
-    </tr>
+        <tr>
+            <td>${student.id}</td>
+            <td>${student.firstName}</td>
+            <td>${student.lastName}</td>
+            <td>${student.email}</td>
+        </tr>
     </c:forEach>
     </tbody>
-</table><br>
+</table>
+<br>
 <h3>teachers:</h3>
-<br><table border="2px">
+<br>
+<table border="2px">
     <thead>
     <tr>
         <th>Id</th>

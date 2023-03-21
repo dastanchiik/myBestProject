@@ -9,7 +9,9 @@
 <html>
 <head>
     <title>Title</title>
-    <style><%@include file="/WEB-INF/views/css/form.css"%></style>
+    <style>
+        <%@include file="/WEB-INF/views/css/form.css" %>
+    </style>
 </head>
 <body>
 <h1>Update Group</h1>

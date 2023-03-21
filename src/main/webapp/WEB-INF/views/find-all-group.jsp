@@ -8,8 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="course" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-<head> <title>Title</title>
-    <style><%@include file="/WEB-INF/views/css/table.css"%></style>
+<head><title>Title</title>
+    <style>
+        <%@include file="/WEB-INF/views/css/table.css" %>
+    </style>
 </head>
 <body>
 <table border="1px">
@@ -28,7 +30,9 @@
             <td><a href="/get/group/by/${courses.id}">${courses.groupName}</a></td>
             <td>${courses.dateOfStart}</td>
             <td>${courses.dateOfFinish}</td>
-            <td><button><a href="/students">student</a></button></td>
+            <td>
+                <button><a href="/students">student</a></button>
+            </td>
             <td>
                 <form action="/deleteCourse/${courses.id}" method="get">
                     <button type="submit">DELETE</button>
@@ -44,7 +48,8 @@
     </tbody>
 </table>
 <div>
-    <button><a href="/groupForm">create new group</a></button><br>
+    <button><a href="/groupForm">create new group</a></button>
+    <br>
     <button><a href="/companies">main</a></button>
 </div>
 </body>

@@ -10,7 +10,9 @@
 <html>
 <head>
     <title>Title</title>
-    <style><%@include file="/WEB-INF/views/css/table.css"%></style>
+    <style>
+        <%@include file="/WEB-INF/views/css/table.css" %>
+    </style>
 </head>
 <body>
 <table border="2px">

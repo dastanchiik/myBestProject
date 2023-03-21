@@ -9,14 +9,16 @@
 <html>
 <head>
     <title>Title</title>
-    <style><%@include file="/WEB-INF/views/css/form.css"%></style>
+    <style>
+        <%@include file="/WEB-INF/views/css/form.css" %>
+    </style>
 </head>
 <body>
 <h1>Update company</h1>
 <form action="/real/update/${company.id}" method="post">
-<label>Company name:</label><input value="${company.companyName}" type="text" name="name">
-<label>Country:</label><input value="${company.locatedCountry}" type="text" name="country">
-  <br>  <input type="submit" value="update">
+    <label>Company name:</label><input value="${company.companyName}" type="text" name="name">
+    <label>Country:</label><input value="${company.locatedCountry}" type="text" name="country">
+    <br> <input type="submit" value="update">
 </form>
 </body>
 </html>

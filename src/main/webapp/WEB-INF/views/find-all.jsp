@@ -10,7 +10,9 @@
 <html>
 <head>
     <title>Title</title>
-    <style><%@include file="/WEB-INF/views/css/table.css"%></style>
+    <style>
+        <%@include file="/WEB-INF/views/css/table.css" %>
+    </style>
 
 </head>
 <body>
@@ -24,35 +26,40 @@
     </thead>
     <tbody>
     <c:forEach items="${all}" var="company">
-    <tr>
-        <td>${company.id}</td>
-        <td>
-            <a href="/get/by/${company.id}">${company.companyName}</a>
-        </td>
-        <td>${company.locatedCountry}</td>
-        <td><button type="submit"><a href="/courses">course</a></button></td>
-        <td><button type="submit"><a href="/groups">groups</a></button></td>
-        <td>
-            <form action="/deleteCompany/${company.id}" method="get">
-            <button type="submit">DELETE</button>
-            </form>
-        </td>
-        <td>
-            <form action="/update/${company.id}" method="get">
-            <button type="submit">UPDATE</button>
-            </form>
-        </td>
-        <td>
-            <form action="/findAll/${company.id}" method="get">
-                <button type="submit">CONNECTIONS</button>
-            </form>
-        </td>
-    </tr>
+        <tr>
+            <td>${company.id}</td>
+            <td>
+                <a href="/get/by/${company.id}">${company.companyName}</a>
+            </td>
+            <td>${company.locatedCountry}</td>
+            <td>
+                <button type="submit"><a href="/courses">course</a></button>
+            </td>
+            <td>
+                <button type="submit"><a href="/groups">groups</a></button>
+            </td>
+            <td>
+                <form action="/deleteCompany/${company.id}" method="get">
+                    <button type="submit">DELETE</button>
+                </form>
+            </td>
+            <td>
+                <form action="/update/${company.id}" method="get">
+                    <button type="submit">UPDATE</button>
+                </form>
+            </td>
+            <td>
+                <form action="/findAll/${company.id}" method="get">
+                    <button type="submit">CONNECTIONS</button>
+                </form>
+            </td>
+        </tr>
     </c:forEach>
     </tbody>
 </table>
 <div class="button">
-<button><a href="/companyForm" class="company">create new company</a></button><br>
+    <button><a href="/companyForm" class="company">create new company</a></button>
+    <br>
 </div>
 </body>
 </html>

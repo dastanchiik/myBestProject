@@ -9,12 +9,14 @@
 <html>
 <head>
     <title>Title</title>
-    <style><%@include file="/WEB-INF/views/css/form.css"%></style>
+    <style>
+        <%@include file="/WEB-INF/views/css/form.css" %>
+    </style>
 </head>
 <body>
 <h1>Update student</h1>
 <form action="/student/update/${company.id}" method="post">
-  <label>first name:</label><input value="${company.firstName}" type="text" name="name">
+    <label>first name:</label><input value="${company.firstName}" type="text" name="name">
     <label>last name:</label><input value="${company.lastName}" type="text" name="lName">
     <label>email:</label><input value="${company.email}" type="text" name="email">
     <label>format:</label><input value="${company.studyFormat}" name="format">

@@ -12,7 +12,7 @@
     <style>
         <%@include file="/WEB-INF/views/css/form.css"%>
     </style>
-<%--        <link rel="stylesheet" href="css/form.css">--%>
+    <%--        <link rel="stylesheet" href="css/form.css">--%>
 </head>
 <body>
 <div class="box">
@@ -24,7 +24,7 @@
             <i></i>
         </div>
         <div class="input-box">
-            <input type="text" name="located" id="locatedCountry" placeholder="Country:" required = "required">
+            <input type="text" name="located" id="locatedCountry" placeholder="Country:" required="required">
             <!--            <span for="locatedCountry">Country:</span>-->
             <i></i>
         </div>

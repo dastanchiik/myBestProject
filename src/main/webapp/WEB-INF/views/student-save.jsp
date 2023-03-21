@@ -10,34 +10,36 @@
 <html>
 <head>
     <title>Title</title>
-    <style><%@include file="/WEB-INF/views/css/form.css"%></style>
+    <style>
+        <%@include file="/WEB-INF/views/css/form.css" %>
+    </style>
 </head>
 <body>
 <div class="box">
-<h1>Save student</h1>
-<form action="/saveStudent" method="post">
-    <div class="input-box">
-    <input type="text" name="name" placeholder="first name:">
-        <i></i>
-    </div>
-    <div class="input-box">
-    <input type="text" name="lName" placeholder="last name:">
-        <i></i>
-    </div>
-    <div class="input-box">
-    <input type="text" name="email" placeholder="email:">
-        <i></i>
-    </div>
-    <div class="input-box">
-    <input type="text" name="format" placeholder="Study format:">
-    <i></i>
-    </div>
-    <c:forEach items="${groupConnection}" var="company">
-        <input type="checkbox" id="${company.id}" name="id" value="${company.id}">
-        <label for="${company.id}">${company.groupName}</label>
-    </c:forEach>
-    <input type="submit" value="save">
-</form>
+    <h1>Save student</h1>
+    <form action="/saveStudent" method="post">
+        <div class="input-box">
+            <input type="text" name="name" placeholder="first name:">
+            <i></i>
+        </div>
+        <div class="input-box">
+            <input type="text" name="lName" placeholder="last name:">
+            <i></i>
+        </div>
+        <div class="input-box">
+            <input type="text" name="email" placeholder="email:">
+            <i></i>
+        </div>
+        <div class="input-box">
+            <input type="text" name="format" placeholder="Study format:">
+            <i></i>
+        </div>
+        <c:forEach items="${groupConnection}" var="company">
+            <input type="checkbox" id="${company.id}" name="id" value="${company.id}">
+            <label for="${company.id}">${company.groupName}</label>
+        </c:forEach>
+        <input type="submit" value="save">
+    </form>
 </div>
 </body>
 </html>
