@@ -16,7 +16,7 @@
 
 </head>
 <body>
-<table border="1px" style="color: green">
+<table border="1px">
     <thead>
     <tr>
         <th>id</th>

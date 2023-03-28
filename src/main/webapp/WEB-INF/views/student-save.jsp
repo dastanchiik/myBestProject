@@ -12,6 +12,18 @@
     <title>Title</title>
     <style>
         <%@include file="/WEB-INF/views/css/form.css" %>
+        .select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px;
+        }
+
+        .select option {
+            font-size: 16px;
+        }
+
     </style>
 </head>
 <body>
@@ -31,7 +43,11 @@
             <i></i>
         </div>
         <div class="input-box">
-            <input type="text" name="format" placeholder="Study format:">
+<%--            <input type="text" name="format" placeholder="Study format:">--%>
+            <select name="format" class="select">
+                <option>ONLINE</option>
+                <option>OFFLINE</option>
+            </select>
             <i></i>
         </div>
         <c:forEach items="${groupConnection}" var="company">

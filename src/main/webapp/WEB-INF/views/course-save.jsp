@@ -30,7 +30,7 @@
             <input type="checkbox" id="${company.id}" name="id" value="${company.id}">
             <label for="${company.id}">${company.companyName}</label>
         </c:forEach>
-        <button type="submit" value="save">Submit</button>
+        <input type="submit" value="save">Submit</input>
     </form>
 </div>
 </body>

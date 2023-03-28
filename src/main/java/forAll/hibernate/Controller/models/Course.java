@@ -20,7 +20,7 @@ public class Course {
     private Company company;
     @OneToOne(mappedBy = "course", cascade = CascadeType.REMOVE)
     private Teacher teacher;
-    @ManyToMany(mappedBy = "courses", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "courses", cascade = CascadeType.REMOVE)
     private List<Groups> groups;
 
     public Course() {
